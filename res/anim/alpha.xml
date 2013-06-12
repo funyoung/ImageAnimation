@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Alpha animation from 100% to 0%, with 5s duration after 1s start offset -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:interpolator="@android:anim/accelerate_interpolator">
+
+    <alpha
+            android:duration="5000"
+            android:fromAlpha="1.0"
+            android:startOffset="1000"
+            android:toAlpha="0.0"/>
+
+</set> 

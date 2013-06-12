@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Scale animation from 100% to 10%, with 5s duration around 50% x/y axis of itself -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:interpolator="@android:anim/accelerate_interpolator" >
+    <scale
+            android:fromXScale="1.0"
+            android:toXScale="0.1"
+            android:fromYScale="1.0"
+            android:toYScale="0.1"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:duration="5000"/>
+</set>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- translate animation x-axis(0% - 50%) and y-axis(0% - 100%), with 5s duration -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:interpolator="@android:anim/accelerate_interpolator" >
+
+    <translate
+            android:fromXDelta="0%"
+            android:toXDelta="50%"
+            android:fromYDelta="0%"
+            android:toYDelta="100%"
+            android:duration="5000" />
+
+</set>

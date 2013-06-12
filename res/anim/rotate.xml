@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Alpha animation from 0 to 360 degree, with 5s duration around 50% x/y axis of its parent -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:interpolator="@android:anim/accelerate_interpolator">
+
+    <rotate
+            android:fromDegrees="0"
+            android:toDegrees="360"
+            android:pivotX="50%p"
+            android:pivotY="50%p"
+            android:duration="5000"/>
+</set>
