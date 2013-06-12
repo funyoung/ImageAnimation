@@ -33,6 +33,7 @@ abstract public class ImageFragment extends Fragment {
         if (null == imageView) {
             Log.e(TAG, "onCreateView, no 'image' id in the view.");
         } else {
+            onRootViewCreated(rootView);
             String title = getImageTitle();
             if (null != title) {
                 getActivity().setTitle(title);
@@ -95,4 +96,6 @@ abstract public class ImageFragment extends Fragment {
         return null;
     }
     /// get-methods end.
+    protected void onRootViewCreated(View rootView) {
+    }
 }
