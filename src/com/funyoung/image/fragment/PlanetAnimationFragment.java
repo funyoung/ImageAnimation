@@ -50,6 +50,12 @@ public class PlanetAnimationFragment extends PlanetFragment {
         rotatebutton = (Button) rootView.findViewById(R.id.rotate);
         translatebutton = (Button) rootView.findViewById(R.id.translate);
 
+        Animation shake = AnimationUtils.loadAnimation(getActivity(), R.anim.shake);
+        rotatebutton.startAnimation(shake);
+        alphabutton.startAnimation(shake);
+        translatebutton.startAnimation(shake);
+        scalebutton.startAnimation(shake);
+
         ImageView image = (ImageView) rootView.findViewById(R.id.image);
         setOnClickListener(image);
     }

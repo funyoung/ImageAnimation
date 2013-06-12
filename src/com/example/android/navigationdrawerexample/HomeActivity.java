@@ -64,13 +64,50 @@ public class HomeActivity extends Activity {
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView i = createReflectedImages(mContext, mImageIds[position]);
-            i.setLayoutParams(new CoverFlow.LayoutParams(120, 100));
-            i.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+//            ImageView i = createReflectedImages(mContext, mImageIds[position]);
+//            i.setLayoutParams(new CoverFlow.LayoutParams(120, 100));
+//            i.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+//            // 设置的抗锯齿
+//            BitmapDrawable drawable = (BitmapDrawable) i.getDrawable();
+//            drawable.setAntiAlias(true);
+//            return i;
+            // A ViewHolder keeps references to children views to avoid unneccessary calls
+            // to findViewById() on each row.
+            ViewHolder holder;
+
+            // When convertView is not null, we can reuse it directly, there is no need
+            // to reinflate it. We only inflate a new View when the convertView supplied
+            // by ListView is null.
+            if (convertView == null) {
+
+                convertView = new ImageView(mContext);
+
+                // Creates a ViewHolder and store references to the two children views
+                // we want to bind data to.
+                holder = new ViewHolder();
+                holder.icon = (ImageView) convertView;
+
+                holder.icon.setLayoutParams(new CoverFlow.LayoutParams(120, 100));
+                holder.icon.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+
+                convertView.setTag(holder);
+            } else {
+                // Get the ViewHolder back to get fast access to the TextView
+                // and the ImageView.
+                holder = (ViewHolder) convertView.getTag();
+            }
+
+            // Bind the data efficiently with the holder.
+            holder.icon.setImageBitmap(createReflectedBitmap(mContext, mImageIds[position]));
+
             // 设置的抗锯齿
-            BitmapDrawable drawable = (BitmapDrawable) i.getDrawable();
+            BitmapDrawable drawable = (BitmapDrawable) holder.icon.getDrawable();
             drawable.setAntiAlias(true);
-            return i;
+
+            return convertView;
+        }
+        static class ViewHolder {
+            ImageView icon;
         }
 
         public float getScale(boolean focused, int offset) {
@@ -84,7 +121,7 @@ public class HomeActivity extends Activity {
          * @param imageId
          *                 <a href="http://my.oschina.net/u/556800" target="_blank" rel="nofollow">@return</a>
          */
-        public ImageView createReflectedImages(Context mContext, int imageId) {
+        public Bitmap createReflectedBitmap(Context mContext, int imageId) {
             Bitmap originalImage = BitmapFactory.decodeResource(mContext.getResources(), imageId);
             final int reflectionGap = 4;
             int width = originalImage.getWidth();
@@ -120,10 +157,7 @@ public class HomeActivity extends Activity {
             canvas.drawRect(0, height, width, bitmapWithReflection.getHeight()
                     + reflectionGap, paint);
 
-            ImageView imageView = new ImageView(mContext);
-            imageView.setImageBitmap(bitmapWithReflection);
-
-            return imageView;
+            return bitmapWithReflection;
         }
     }
 
