@@ -138,6 +138,7 @@ public class MainActivity extends Activity {
         // If the nav drawer is open, hide action items related to the content view
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
         menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
+        menu.findItem(R.id.action_switch).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -161,6 +162,12 @@ public class MainActivity extends Activity {
                 Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
             }
             return true;
+
+            case R.id.action_switch:
+                Intent i = new Intent(this, HomeActivity.class);
+                startActivity(i);
+                return true;
+
         default:
             return super.onOptionsItemSelected(item);
         }

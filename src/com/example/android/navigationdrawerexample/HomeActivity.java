@@ -23,7 +23,7 @@ public class HomeActivity extends Activity {
         CoverFlow cf = new CoverFlow(this);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);// 设置全屏
-        cf.setBackgroundDrawable(this.getResources().getDrawable(R.drawable.bg));//背景
+//        cf.setBackgroundDrawable(this.getResources().getDrawable(R.drawable.bg));//背景
         cf.setAdapter(new ImageAdapter(this));
         ImageAdapter imageAdapter = new ImageAdapter(this);
         cf.setAdapter(imageAdapter);
@@ -45,7 +45,7 @@ public class HomeActivity extends Activity {
                 R.drawable.saturn,
                 R.drawable.uranus,
                 R.drawable.neptune,
-                };
+        };
 
         public ImageAdapter(Context c) {
             mContext = c;
@@ -78,12 +78,10 @@ public class HomeActivity extends Activity {
         }
 
         /**
-         * 068
          * 设置镜像图像
-         * 069
          *
-         * @param mContext 070
-         * @param imageId  071
+         * @param mContext
+         * @param imageId
          *                 <a href="http://my.oschina.net/u/556800" target="_blank" rel="nofollow">@return</a>
          */
         public ImageView createReflectedImages(Context mContext, int imageId) {
@@ -205,28 +203,24 @@ public class HomeActivity extends Activity {
                 rotationAngle = (int) (((float) (mCoveflowCenter - childCenter) / childWidth) * mMaxRotationAngle);
                 if (Math.abs(rotationAngle) > mMaxRotationAngle) {
                     rotationAngle = (rotationAngle < 0) ? -mMaxRotationAngle
-                    : mMaxRotationAngle;
+                            : mMaxRotationAngle;
                 }
                 transformImageBitmap((ImageView) child, t, rotationAngle);
             }
             return true;
         }
 
-                /**
-                 097
-                 *
-                 098
-                 */
+        /**
+         *
+         */
         protected void onSizeChanged(int w, int h, int oldw, int oldh) {
             mCoveflowCenter = getCenterOfCoverflow();
             super.onSizeChanged(w, h, oldw, oldh);
         }
 
-                /**
-                 105
-                 * 把图像位图的角度通过
-                 106
-                 */
+        /**
+         * 把图像位图的角度通过
+         */
         private void transformImageBitmap(ImageView child, Transformation t,
                                           int rotationAngle) {
             mCamera.save();
@@ -242,9 +236,9 @@ public class HomeActivity extends Activity {
                 mCamera.translate(0.0f, 0.0f, zoomAmount);
                 if (mCircleMode) {
                     if (rotation < 40)
-                    mCamera.translate(0.0f, 155, 0.0f);
+                        mCamera.translate(0.0f, 155, 0.0f);
                     else
-                    mCamera.translate(0.0f, (255 - rotation * 2.5f), 0.0f);
+                        mCamera.translate(0.0f, (255 - rotation * 2.5f), 0.0f);
                 }
                 if (mAlphaMode) {
                     ((ImageView) (child)).setAlpha((int) (255 - rotation * 2.5));
