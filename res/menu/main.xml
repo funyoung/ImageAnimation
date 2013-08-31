@@ -2,8 +2,8 @@
     <item android:id="@+id/menu_demos"
         android:title="@string/menu_map_demo"
         android:orderInCategory="100" />
-    <item android:id="@+id/menu_sigup"
-          android:title="@string/menu_user_login"
+    <item android:id="@+id/menu_sliding"
+          android:title="@string/menu_sliding_demo"
           android:orderInCategory="100" />
     <item android:id="@+id/menu_logout"
           android:title="@string/menu_user_logout"
@@ -13,8 +13,7 @@
           android:orderInCategory="100" />
     <item android:id="@+id/action_websearch"
           android:icon="@drawable/ic_actionbar_search"
-          android:title="@string/action_websearch"
-          android:showAsAction="ifRoom|withText" />
+          android:title="@string/action_websearch" />
     <item android:id="@+id/action_toggle"
           android:icon="@drawable/ic_actionbar_map"
           android:title="@string/action_toggle"

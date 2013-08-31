@@ -305,19 +305,25 @@ public class MainActivity extends FragmentActivity {
                 }
                 return true;
             case R.id.menu_demos:
-                Intent i = new Intent(getApplicationContext(),
-                        BMapApiDemoMain.class);
-                if (i.resolveActivity(getPackageManager()) != null) {
-                    startActivity(i);
-                } else {
-                    Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
-                }
+                shootStartActivity(BMapApiDemoMain.class);
+                return true;
+            case R.id.menu_sliding:
+//                shootStartActivity(com.example.android.slidingfragments.SlidingFragments.class);
                 return true;
             case R.id.menu_feedback:
                 gotoFeedbackView();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void shootStartActivity(Class<?> cls) {
+        Intent i = new Intent(getApplicationContext(), cls);
+        if (i.resolveActivity(getPackageManager()) != null) {
+            startActivity(i);
+        } else {
+            Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
         }
     }
 

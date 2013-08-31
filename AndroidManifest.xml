@@ -216,6 +216,8 @@
 
         <meta-data android:name="api_key" android:value="psGPqrE7baYRGbIGSuBh7dP5" />
         <!-- push service end -->
+        <activity android:name="com.example.android.slidingfragments.SlidingFragments"
+                  />
     </application>
 
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
