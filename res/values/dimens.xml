@@ -15,4 +15,9 @@
     <dimen name="generic_item_vertical_margin">10dp</dimen>
     <dimen name="generic_drawable_padding">0dp</dimen>
     <!-- end of generic margin -->
+
+    <dimen name="slide_fragment_horizontal_margin">50dp</dimen>
+    <dimen name="text_vertical_margin">18dp</dimen>
+    <dimen name="text_horizontal_margin">10dp</dimen>
+
 </resources>
