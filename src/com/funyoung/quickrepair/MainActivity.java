@@ -308,7 +308,7 @@ public class MainActivity extends FragmentActivity {
                 shootStartActivity(BMapApiDemoMain.class);
                 return true;
             case R.id.menu_sliding:
-//                shootStartActivity(com.example.android.slidingfragments.SlidingFragments.class);
+                shootStartActivity(com.example.android.slidingfragments.SlidingFragments.class);
                 return true;
             case R.id.menu_feedback:
                 gotoFeedbackView();
