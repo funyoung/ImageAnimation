@@ -156,7 +156,7 @@ public class PostListFragment extends ListFragment implements
             HashMap<String, Object> item;
             for (Post post : postList) {
                 item = new HashMap<String, Object>();
-                item.put("img", CategoryGridFragment.images[post.category]);
+                item.put("img", MainActivity.images[post.category]);
                 item.put("label", post.area);
                 item.put("time", post.createTime);
                 item.put("description", post.description);
@@ -166,13 +166,6 @@ public class PostListFragment extends ListFragment implements
         }
         adapter.notifyDataSetChanged();
     }
-
-    private static String[] ITEMS = {"Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam",
-            "Abondance", "Ackawi", "Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu",
-            "Airag", "Airedale", "Aisy Cendre", "Allgauer Emmentaler", "Abbaye de Belloc",
-            "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi", "Acorn", "Adelost",
-            "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale", "Aisy Cendre",
-            "Allgauer Emmentaler"};
 
     private PullToRefreshAttacher mPullToRefreshAttacher;
 

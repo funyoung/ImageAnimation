@@ -89,6 +89,42 @@ public class MainActivity extends FragmentActivity {
 
     private static final String TAG = "MainActivity";
 
+    public static int[] subIdArray = {
+            R.array.qp_category_id_array_sub1,
+            R.array.qp_category_id_array_sub2,
+            R.array.qp_category_id_array_sub3,
+            R.array.qp_category_id_array_sub4,
+            R.array.qp_category_id_array_sub5,
+            R.array.qp_category_id_array_sub6,
+            R.array.qp_category_id_array_sub7,
+            R.array.qp_category_id_array_sub8,
+            R.array.qp_category_id_array_sub9,
+    };
+
+    public static int[] subLabelArray = {
+            R.array.qp_category_label_array_sub1,
+            R.array.qp_category_label_array_sub2,
+            R.array.qp_category_label_array_sub3,
+            R.array.qp_category_label_array_sub4,
+            R.array.qp_category_label_array_sub5,
+            R.array.qp_category_label_array_sub6,
+            R.array.qp_category_label_array_sub7,
+            R.array.qp_category_label_array_sub8,
+            R.array.qp_category_label_array_sub9,
+    };
+
+    public static Integer[] images = {
+            R.drawable.ic_classify_airconditioning,
+            R.drawable.ic_classify_heater,
+            R.drawable.ic_classify_closestool,
+            R.drawable.ic_classify_electric,
+            R.drawable.ic_classify_pipeline,
+            R.drawable.ic_classify_appliance,
+            R.drawable.ic_classify_house,
+            R.drawable.ic_classify_furniture,
+            R.drawable.ic_classify_more
+    };
+
     private DrawerLayout mDrawerLayout;
 //    private ListView listView;
 //    private TextView mContent;

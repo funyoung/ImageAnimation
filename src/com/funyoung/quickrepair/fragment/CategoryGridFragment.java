@@ -35,42 +35,6 @@ public  class CategoryGridFragment extends BaseFragment {
         // Empty constructor required for fragment subclasses
     }
 
-    private static int[] subIdArray = {
-            R.array.qp_category_id_array_sub1,
-            R.array.qp_category_id_array_sub2,
-            R.array.qp_category_id_array_sub3,
-            R.array.qp_category_id_array_sub4,
-            R.array.qp_category_id_array_sub5,
-            R.array.qp_category_id_array_sub6,
-            R.array.qp_category_id_array_sub7,
-            R.array.qp_category_id_array_sub8,
-            R.array.qp_category_id_array_sub9,
-    };
-
-    private static int[] subLabelArray = {
-            R.array.qp_category_label_array_sub1,
-            R.array.qp_category_label_array_sub2,
-            R.array.qp_category_label_array_sub3,
-            R.array.qp_category_label_array_sub4,
-            R.array.qp_category_label_array_sub5,
-            R.array.qp_category_label_array_sub6,
-            R.array.qp_category_label_array_sub7,
-            R.array.qp_category_label_array_sub8,
-            R.array.qp_category_label_array_sub9,
-    };
-
-    public static Integer[] images = {
-            R.drawable.ic_classify_airconditioning,
-            R.drawable.ic_classify_heater,
-            R.drawable.ic_classify_closestool,
-            R.drawable.ic_classify_electric,
-            R.drawable.ic_classify_pipeline,
-            R.drawable.ic_classify_appliance,
-            R.drawable.ic_classify_house,
-            R.drawable.ic_classify_furniture,
-            R.drawable.ic_classify_more
-    };
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -83,7 +47,7 @@ public  class CategoryGridFragment extends BaseFragment {
     }
 
     private void initSubCategory() {
-        String[] subLabels = getResources().getStringArray(subLabelArray[mMainId]);
+        String[] subLabels = getResources().getStringArray(MainActivity.subLabelArray[mMainId]);
         mSubCategory.clear();
         mSubCategory.addAll(Arrays.asList(subLabels));
 
@@ -102,7 +66,7 @@ public  class CategoryGridFragment extends BaseFragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int[] subIds = getResources().getIntArray(subIdArray[mMainId]);
+                int[] subIds = getResources().getIntArray(MainActivity.subIdArray[mMainId]);
                 ((MainActivity)getActivity()).startPost(mMainId + 1, subIds[i], labels[mMainId], mSubCategory.get(i));
             }
         });
@@ -113,7 +77,7 @@ public  class CategoryGridFragment extends BaseFragment {
         labels = getResources().getStringArray(R.array.qp_category_label_array);
         for (int i = 0; i < 9; i++) {
             HashMap<String, Object> itemUnit = new HashMap<String, Object>();
-            itemUnit.put("img", images[i]);
+            itemUnit.put("img", MainActivity.images[i]);
             itemUnit.put("label", labels[i]);
             itemData.add(itemUnit);
         }
@@ -140,7 +104,7 @@ public  class CategoryGridFragment extends BaseFragment {
 
     private void showSubCategory(int i) {
         mMainId = i;
-        String[] subLabels = getResources().getStringArray(subLabelArray[mMainId]);
+        String[] subLabels = getResources().getStringArray(MainActivity.subLabelArray[mMainId]);
         mSubCategory.clear();
         mSubCategory.addAll(Arrays.asList(subLabels));
         adapter.notifyDataSetChanged();

@@ -13,17 +13,22 @@
      limitations under the License.
 -->
 
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:src="@drawable/earth" >
-</ImageView>
-<!--<GridView xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:numColumns="3"-->
-    <!--android:verticalSpacing="1dp"-->
-    <!--android:horizontalSpacing="1dp"-->
-    <!--android:stretchMode="columnWidth"-->
-    <!--android:gravity="top" >-->
-<!--</GridView>-->
+<!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"-->
+           <!--android:layout_width="match_parent"-->
+           <!--android:layout_height="match_parent"-->
+           <!--android:src="@drawable/earth" >-->
+<!--</ImageView>-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/ptr_gridview"
+              android:numColumns="3"
+              android:verticalSpacing="1dp"
+              android:horizontalSpacing="1dp"
+              android:stretchMode="columnWidth"
+              android:gravity="top" >
+    </GridView>
+</FrameLayout>
