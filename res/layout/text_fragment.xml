@@ -29,7 +29,7 @@
             android:verticalSpacing="1dp"
             android:horizontalSpacing="1dp"
             android:stretchMode="columnWidth"
-            android:gravity="top" />
+            android:gravity="center_vertical" />
 
     <!--<TextView-->
             <!--android:layout_width="match_parent"-->
