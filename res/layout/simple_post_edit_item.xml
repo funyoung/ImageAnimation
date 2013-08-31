@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/GenericMarginItem"
+              android:layout_marginTop="0dp"
+              android:layout_marginBottom="0dp"
+              android:layout_marginLeft="@dimen/item_block_height_small"
+              android:layout_marginRight="@dimen/item_block_height_small"
+              android:background="@drawable/button_border"
+              android:layout_height="@dimen/item_block_height_small"
+        >
+    <TextView android:id="@+id/tv_label"
+              android:gravity="left"
+              android:layout_gravity="center_vertical"
+              android:text="Label"
+              android:minWidth="@dimen/item_block_label_min_width"
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content"/>
+    <include layout="@layout/item_vertical_separator"/>
+    <EditText android:id="@+id/tv_content"
+            style="@style/RightEditText"/>
+</LinearLayout>

@@ -1,0 +1,51 @@
+<resources>
+
+    <!--<style name="AppTheme" parent="android:Theme.Holo.Light" />-->
+    <!--
+            Base application theme, dependent on API level. This theme is replaced
+            by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- iosched 2013 style begin -->
+
+    <style name="GenericBockItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/item_block_min_size</item>
+    </style>
+
+    <style name="GenericMarginItem" parent="GenericBockItem">
+        <item name="android:layout_marginLeft">@dimen/generic_item_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/generic_item_horizontal_margin</item>
+        <item name="android:layout_marginTop">@dimen/generic_item_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/generic_item_vertical_margin</item>
+    </style>
+
+    <style name="GoRightTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:drawablePadding">@dimen/generic_drawable_padding</item>
+        <item name="android:drawableRight">@drawable/ic_more</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:layout_gravity">right</item>
+    </style>
+
+    <style name="RightEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/item_block_min_size</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+    <!-- iosched 2013 style end -->
+</resources>
