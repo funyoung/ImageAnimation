@@ -1,40 +1,290 @@
-<!--
-  Copyright 2013 The Android Open Source Project
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-  -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.navigationdrawerexample"
-    android:versionCode="1"
-    android:versionName="1.0">
+    package="com.funyoung.qcwx"
+    android:versionCode="5"
+    android:versionName="0.3.2" >
 
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="17" />
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="17" />
 
     <application
-        android:label="@string/app_name"
+        android:name="baidumapsdk.demo.DemoApplication"
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
-        android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+        android:label="@string/app_name" >
+        <activity
+            android:name="baidumapsdk.demo.BMapApiDemoMain"
+            android:label="BaiduMapSDKDemo" 
+            android:configChanges="orientation"
+            android:screenOrientation="sensor">
+        </activity>
 
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
+                android:name="com.funyoung.quickrepair.SettingsActivity"
+                android:label="@string/settings"
+                android:configChanges="orientation"
+                android:screenOrientation="sensor">
+        </activity>
+
+        <activity
+                android:name="com.funyoung.quickrepair.MainActivity"
+                android:windowSoftInputMode="adjustResize"
+                android:launchMode="singleTask"
+                android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                       android:resource="@xml/searchable_places" />
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.BaseMapDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_basemap"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.CustomRouteOverlayDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.GeometryDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_geometry"
+            android:screenOrientation="sensor" >
+        </activity>
+       
+        <activity
+            android:name="baidumapsdk.demo.PoiSearchDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_poi"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.LocationOverlayDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_location"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.OfflineDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_offline"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.RoutePlanDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_route"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.GeoCoderDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_geocode"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.BusLineSearchDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_bus"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.CloudSearchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_cloud"
+            android:screenOrientation="sensor" >
+        </activity>
+       
+        
+        <activity
+            android:name="baidumapsdk.demo.MapControlDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_control"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.UISettingDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_ui"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.LayersDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_layers"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.OverlayDemo"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/demo_name_overlay"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.baidu.mapapi.search.PlaceCaterActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        
+        <activity
+            android:name="baidumapsdk.demo.NaviDemo"
+            android:label="@string/demo_name_navi" >
+        </activity>
+        <activity
+            android:name="baidumapsdk.demo.CloudSearchDemo"
+            android:label="@string/title_activity_cloud_search_demo" >
+        </activity>
+        
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <meta-data android:value="51f1ccf956240b3091033175" android:name="UMENG_APPKEY"></meta-data>
+        <meta-data android:value="ANDROID_DEBUG" android:name="UMENG_CHANNEL"/>
+        <activity android:name="com.umeng.fb.ConversationActivity"/>
+        <activity android:name="com.umeng.fb.ContactActivity"/>
+
+        <!-- PhotoStream code -->
+        <receiver android:name="com.funyoung.quickrepair.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.funyoung.quickrepair.CheckUpdateService" />
+
+        <!-- push service rich media display -->
+        <activity
+                android:name="com.baidu.android.pushservice.richmedia.MediaViewActivity"
+                android:configChanges="orientation|keyboardHidden"
+                android:label="MediaViewActivity" >
+        </activity>
+        <activity
+                android:name="com.baidu.android.pushservice.richmedia.MediaListActivity"
+                android:configChanges="orientation|keyboardHidden"
+                android:label="MediaListActivity"
+                android:launchMode="singleTask" >
         </activity>
 
+        <!-- push service client -->
+        <receiver android:name="com.baidu.push.PushMessageReceiver">
+            <intent-filter>
+                <!-- 接收push消息 -->
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <!-- 接收bind,unbind,fetch,delete等反馈消息 -->
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+
+        <!-- push service -->
+        <receiver android:name="com.baidu.android.pushservice.PushServiceReceiver"
+                  android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.baidu.android.pushservice.RegistrationReceiver"
+                  android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+                android:name="com.baidu.android.pushservice.PushService"
+                android:exported="true"
+                android:process=":bdservice_v1" />
+
+        <meta-data android:name="api_key" android:value="psGPqrE7baYRGbIGSuBh7dP5" />
+        <!-- push service end -->
     </application>
 
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
+    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </permission>
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" >
+    </uses-permission>
+    <!-- <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"></uses-permission> -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" >
+    </uses-permission>
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <!-- require for signin with phone number -->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="false" />
 </manifest>

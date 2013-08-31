@@ -40,6 +40,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.funyoung.qcwx.R;
+
 /**
  * This example illustrates a common usage of the DrawerLayout widget
  * in the Android support library.
